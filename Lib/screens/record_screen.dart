@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:http/http.dart' as http;
@@ -53,7 +52,7 @@ class _CameraVoiceControlPageState extends State<CameraVoiceControlPage> {
       if (response.statusCode == 200) {
         print('Image uploaded successfully');
         print(response.body);
-        Navigator.of(context).pop(); // Go back to the previous screen
+        Navigator.of(context).pop();
       } else {
         print('Failed to upload image: ${response.body}');
       }
@@ -64,7 +63,7 @@ class _CameraVoiceControlPageState extends State<CameraVoiceControlPage> {
 
   Future<String> _saveImageAndGetPath(XFile image) async {
     final Directory extDir = await getApplicationDocumentsDirectory();
-    final String dirPath = '${extDir.path}/Pictures/flutter_voice_camera';
+    final String dirPath = '${extDir.path}/Pictures/Camera';
     await Directory(dirPath).create(recursive: true);
     final String filePath =
         '$dirPath/${DateTime.now().millisecondsSinceEpoch.toString()}.jpg';

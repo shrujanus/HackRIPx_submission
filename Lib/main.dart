@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import './screens/main_screen.dart';
+import './screens/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,14 +34,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.dark,
           seedColor: Colors.blue,
-          //TODO mess with RGB
           background: const Color.fromRGBO(1, 32, 15, 1),
           onPrimary: const Color.fromRGBO(158, 197, 171, 1),
           secondary: const Color.fromRGBO(50, 116, 109, 1),
         ),
         useMaterial3: true,
       ),
-      home: const MainPage(),
+      home: const LoginScreen(),
     );
   }
 }

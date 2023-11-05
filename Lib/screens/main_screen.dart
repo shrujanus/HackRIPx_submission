@@ -68,7 +68,7 @@ class _MainPageState extends State<MainPage> {
                       return Text('Error: ${snapshot.error}');
                     }
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(child: CircularProgressIndicator());
+                      return const Center(child: CircularProgressIndicator());
                     }
                     var documents = snapshot.data?.docs ?? [];
                     return ListView.builder(
@@ -106,7 +106,7 @@ class _MainPageState extends State<MainPage> {
                     return Text('Error: ${snapshot.error}');
                   }
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   }
                   var documents = snapshot.data?.docs ?? [];
                   return ListView.builder(
@@ -152,7 +152,7 @@ class profile extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('Hello\n${name}!!',
+          Text('Hello\n$name!!',
               style: TextStyle(
                 fontSize: width * 0.13,
                 fontWeight: FontWeight.w200,

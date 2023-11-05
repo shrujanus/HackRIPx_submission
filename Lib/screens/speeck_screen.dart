@@ -53,6 +53,7 @@ class _SpeekState extends State<Speek> {
 
   Future<void> _readJson() async {
     if (!isPlaying) {
+      await flutterTts.setLanguage("en-US");
       await flutterTts.speak(widget.jsonData);
     }
   }
@@ -75,7 +76,7 @@ class _SpeekState extends State<Speek> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Reading'),
+        title: const Text('Reading'),
       ),
       body: Column(
         children: <Widget>[
@@ -84,7 +85,7 @@ class _SpeekState extends State<Speek> {
               onTap: isPlaying ? null : _readJson,
               child: Container(
                 color: Colors.yellow,
-                child: Center(
+                child: const Center(
                   child: Text(
                     'START',
                     style: TextStyle(
@@ -101,7 +102,7 @@ class _SpeekState extends State<Speek> {
               onTap: isPlaying ? _pauseReading : null,
               child: Container(
                 color: Colors.green,
-                child: Center(
+                child: const Center(
                   child: Text(
                     'PAUSE',
                     style: TextStyle(

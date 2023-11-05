@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "788161480905",
+    "project_id": "rpix-7d2b6",
+    "storage_bucket": "rpix-7d2b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788161480905:android:7d61b5f5ec1c1be326a518",
+        "android_client_info": {
+          "package_name": "com.example.rpix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwT87HzK1g_QgikHhglH8TtrI-Q651yLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

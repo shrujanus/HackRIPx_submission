@@ -32,8 +32,9 @@ class _CameraVoiceControlPageState extends State<CameraVoiceControlPage> {
     setState(() {});
   }
 
-  void _initializeTTS() {
-    flutterTts.speak(
+  void _initializeTTS() async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.speak(
         "Please position the document in the frame and press button to take the photo.");
   }
 
@@ -100,6 +101,7 @@ class _CameraVoiceControlPageState extends State<CameraVoiceControlPage> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     if (!_cameraController.value.isInitialized) {
       return Container(
         child: const Center(child: CircularProgressIndicator()),
@@ -114,9 +116,16 @@ class _CameraVoiceControlPageState extends State<CameraVoiceControlPage> {
         children: <Widget>[
           CameraPreview(_cameraController),
           Positioned(
-            bottom: 20,
+            bottom: 10,
+            width: width * 0.95,
+            height: 200,
             child: FloatingActionButton(
-              child: const Icon(Icons.camera),
+              backgroundColor: Colors.red,
+              child: const Icon(
+                Icons.camera,
+                color: Colors.white,
+                size: 100,
+              ),
               onPressed: () {
                 print('Manual capture initiated');
                 _takePicture();
